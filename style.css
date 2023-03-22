@@ -1,0 +1,318 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --bg-color: #FFFFFF;
+  --items-color: #87878e;
+  --clicked-items-color: #323238;
+
+  --clicked-place-color: #FFFFFF;
+  --clicked-forest-bg-color: #017035;
+  --clicked-rainy-bg-color: #02006d;
+  --clicked-coffee-bg-color: #543100;
+  --clicked-fireplace-bg-color: #b02c00;
+
+  /* Dark elements */
+  --dark-bg-color: linear-gradient(188deg, rgb(12, 12, 13) 30%, rgb(47, 47, 52) 100%);
+  --dark-items-color: #333339;
+
+  --dark-clicked-forest-bg-color: #003d1e;
+  --dark-clicked-rainy-bg-color: #010056;
+  --dark-clicked-coffee-bg-color: #4d3006;
+  --dark-clicked-fireplace-bg-color: #670101;
+
+  --dark-items-path-color: #C4C4CC;
+  --dark-clicked-forest-path: #4fff6c;
+  --dark-clicked-rainy-path: #6ef8ff;
+  --dark-clicked-coffee-path: #fff4b6;
+  --dark-clicked-fireplace-path: #ffc593;
+}
+
+
+
+/* --------------- Body ----------------------------- */
+body {
+  background: var(--bg-color);
+}
+
+main {
+  color: var(--clicked-items-color);
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+
+  position: relative;
+  bottom: 4rem;
+}
+
+span {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 12.6rem;
+  line-height: 14.8rem;
+}
+
+.hide {
+  display: none;
+}
+
+
+
+/* --------------- Buttons ----------------------------- */
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+
+  transition: all 0.3s ease-in-out;
+}
+
+#sun-button, #moon-button {
+  position: absolute;
+  top: 7.5rem;
+  right: 3.5rem;
+}
+
+.play-path, .stop-path, .plus-path, .minus-path {
+  fill: var(--items-color);
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+.button-active {
+  fill: var(--clicked-items-color);
+}
+
+.button-place-color-active {
+  fill: var(--clicked-place-color);
+}
+
+.forest-color-active {
+  fill: var(--clicked-forest-bg-color);
+}
+
+.rainy-color-active {
+  fill: var(--clicked-rainy-bg-color);
+}
+
+.coffee-color-active {
+  fill: var(--clicked-coffee-bg-color);
+}
+
+.fireplace-color-active {
+  fill: var(--clicked-fireplace-bg-color);
+}
+
+button.forest, button.rainy, button.coffee, button.fireplace {
+  position: relative;
+}
+
+.volume-slider-forest, .volume-slider-rainy, .volume-slider-coffee, .volume-slider-fireplace {
+  position: absolute;
+  top: 11.5rem;
+  bottom: 0;
+
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+
+  background: var(--clicked-items-color);
+  height: 0.5rem;
+  width: 9.5rem;
+  border-radius: 0.9rem;
+  cursor: pointer;
+}
+
+.slider-active {
+  background: var(--clicked-place-color);
+}
+
+.volume-slider-forest::-webkit-slider-thumb, 
+.volume-slider-rainy::-webkit-slider-thumb, 
+.volume-slider-coffee::-webkit-slider-thumb, 
+.volume-slider-fireplace::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+
+  background: var(--clicked-items-color);
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+}
+
+.volume-slider-forest:focus-within::-webkit-slider-thumb, 
+.volume-slider-rainy:focus-within::-webkit-slider-thumb, 
+.volume-slider-coffee:focus-within::-webkit-slider-thumb, 
+.volume-slider-fireplace:focus-within::-webkit-slider-thumb {
+  background: var(--clicked-place-color);
+}
+
+/* apperance --- property que contém a aparência nativa de UI dos inputs
+   -webkit-appearance --- appearance adaptado pra certos browsers
+   outline --- uma borda extra, além da borda tradicional; fica externa à borda tradicional
+   ::-webkit-slider-thumb --- Pseudo-element que representa o ícone que o user move no "input range"
+*/
+
+
+
+/* --------------- Divs ----------------------------- */
+.control-box {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+
+  align-content: center;
+  align-items: center;
+  gap: 2rem;
+  
+  margin-right: 19.2rem;
+}
+
+.controls {
+  display: flex;
+  gap: 4rem;
+}
+
+.place {
+  max-width: 32rem;
+  
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3.2rem;
+}
+
+
+
+/* --------------- Dark ----------------------------- */
+.dark-bg {
+  background: var(--dark-bg-color);
+}
+
+.dark-mode-timer {
+  color: var(--bg-color);
+}
+
+.dark-items-path-color {
+  fill: var(--dark-items-path-color);
+}
+
+.dark-items-color {
+  fill: var(--dark-items-color);
+}
+
+.dark-play-path, .dark-stop-path, .dark-plus-path, .dark-minus-path {
+  fill: var(--items-color);
+}
+
+.dark-button-active {
+  fill: var(--bg-color);
+}
+
+/* dark path color active */
+.dark-forest-path-active {
+  fill: var(--dark-clicked-forest-path);
+}
+
+.dark-rainy-path-active {
+  fill: var(--dark-clicked-rainy-path);
+}
+
+.dark-coffee-path-active {
+  fill: var(--dark-clicked-coffee-path);
+}
+
+.dark-fireplace-path-active {
+  fill: var(--dark-clicked-fireplace-path);
+}
+
+/* dark place color active */
+.dark-forest-color-active {
+  fill: var(--dark-clicked-forest-bg-color);
+}
+
+.dark-rainy-color-active {
+  fill: var(--dark-clicked-rainy-bg-color);
+}
+
+.dark-coffee-color-active {
+  fill: var(--dark-clicked-coffee-bg-color);
+}
+
+.dark-fireplace-color-active {
+  fill: var(--dark-clicked-fireplace-bg-color);
+}
+
+.dark-volume-slider-forest, .dark-volume-slider-rainy, .dark-volume-slider-coffee, .dark-volume-slider-fireplace {
+  position: absolute;
+  top: 11.5rem;
+  bottom: 0;
+
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+
+  background: var(--dark-items-path-color);
+  height: 0.5rem;
+  width: 9.5rem;
+  border-radius: 0.9rem;
+  cursor: pointer;
+}
+
+.slider-dark-forest {
+  background: var(--dark-clicked-forest-path);
+}
+
+.slider-dark-rainy {
+  background: var(--dark-clicked-rainy-path);
+}
+
+.slider-dark-coffee {
+  background: var(--dark-clicked-coffee-path);
+}
+
+.slider-dark-fireplace {
+  background: var(--dark-clicked-fireplace-path);
+}
+
+.dark-volume-slider-forest::-webkit-slider-thumb, 
+.dark-volume-slider-rainy::-webkit-slider-thumb, 
+.dark-volume-slider-coffee::-webkit-slider-thumb, 
+.dark-volume-slider-fireplace::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+
+  background: var(--dark-items-path-color);
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+}
+
+.dark-volume-slider-forest:focus-within::-webkit-slider-thumb {
+  background: var(--dark-clicked-forest-path);
+}
+
+.dark-volume-slider-rainy:focus-within::-webkit-slider-thumb {
+  background: var(--dark-clicked-rainy-path);
+}
+
+.dark-volume-slider-coffee:focus-within::-webkit-slider-thumb {
+  background: var(--dark-clicked-coffee-path);
+}
+
+.dark-volume-slider-fireplace:focus-within::-webkit-slider-thumb {
+  background: var(--dark-clicked-fireplace-path);
+}
