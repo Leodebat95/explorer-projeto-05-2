@@ -1,4 +1,4 @@
-# Exercício - HTML / CSS & JS dark-modeu
+# Exercício - HTML / CSS & JS dark-mode
 
 Exercício #2 da semana #5, de nome "FocusTimer - Dark Mode". Parte do curso "Explorer", da plataforma de ensino [Rocketseat](https://rocketseat.com.br/).
 
