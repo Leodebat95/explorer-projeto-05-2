@@ -2,7 +2,7 @@
 
 Exercício #2 da semana #5, de nome "Focus Timer - Dark Mode". Parte do curso "Explorer", da plataforma de ensino [Rocketseat](https://rocketseat.com.br/).
 
-Este exercício é focado no estudo das linguagens HTML, CSS e JavaScript, introduzindo os conceitos de esquema de cor dark-mode e dos eventos de DOM no JS.
+Este exercício é focado no estudo das linguagens HTML, CSS e JavaScript, introduzindo os conceitos de esquema de cor dark-mode e dos eventos de DOM no JS.r
 
 <br>
   <img width="406" height="235" alt="Mockup - Desktop" src="https://github.com/user-attachments/assets/6755a091-d94c-44ed-8ce5-e4d2228d24da" />
